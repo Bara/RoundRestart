@@ -37,7 +37,7 @@ public Action Event_TeamChangePending(Event event, const char[] name, bool dontB
 	int iTCount = GetTeamClientCount(CS_TEAM_T);
 	int newTeam = event.GetInt("toteam");
 	
-	if(newTeam == CS_TEAM_T && iTCount == 0 || newTeam == CS_TEAM_CT && iCTCount == 0)
+	if(newTeam == CS_TEAM_T && iTCount == 0 && iCTCount > 1 || newTeam == CS_TEAM_CT && iCTCount == 0 && iTCount > 1)
 	{
 		if(!g_cRestart.BoolValue)
 		{
