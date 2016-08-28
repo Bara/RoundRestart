@@ -23,6 +23,8 @@ public void OnPluginStart()
 	g_cEnable = CreateConVar("round_restart_enable", "1", "Enable this plugin?", _, true, 0.0, true, 1.0);
 	g_cRestart = CreateConVar("round_restart_method", "1", "How to restart? 0 - CS_TerminateRound, 1 - mp_restartgame", _, true, 0.0, true, 1.0);
 	
+	AutoExecConfig();
+	
 	HookEvent("teamchange_pending", Event_TeamChangePending, EventHookMode_Pre);
 }
 
